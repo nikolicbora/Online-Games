@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.UserEntity" table="user" schema="igre">
+        <id name="username">
+            <column name="username" sql-type="varchar(50)" length="50"/>
+        </id>
+        <property name="password">
+            <column name="password" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="ime">
+            <column name="ime" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="prezime">
+            <column name="prezime" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="mail">
+            <column name="mail" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="zanimanje">
+            <column name="zanimanje" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="pol">
+            <column name="pol" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="jmbg">
+            <column name="jmbg" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="pitanje">
+            <column name="pitanje" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="odgovor">
+            <column name="odgovor" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="tip">
+            <column name="tip" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="odobren">
+            <column name="odobren" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

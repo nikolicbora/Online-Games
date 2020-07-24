@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Verifikovanje igara</title>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <p:panel header="Igre koje je potrebno verifikovati">
+                    <p:panel rendered="#{controlSupervizor.list_igara.size() gt 0}">
+                        <p:dataTable value="#{controlSupervizor.list_igara}" var="igra">
+                            <p:column headerText="Dan igre" style="text-align: center">
+                                <p:outputLabel value="#{igra.partija.dan}"/>
+                            </p:column>
+                            <p:column headerText="Igrac" style="text-align: center">
+                                <p:outputLabel value="#{igra.user.username}"/>
+                            </p:column>
+                            <p:column headerText="Za proveru" style="text-align: center">
+                                <p:outputLabel escape="false" value="#{controlSupervizor.napraviPrikaz(igra)}"/>
+                            </p:column>
+
+                            <p:column headerText="Vise detalja">
+                                <h:form>
+                                    <p:commandButton value="Prikazi detalje" action="#{controlSupervizor.prikazIgre(igra)}" style="width: 100%" update="@all"/>
+                                </h:form>
+                            </p:column>
+                        </p:dataTable>
+                    </p:panel>
+                    <p:panel rendered="#{controlSupervizor.list_igara.size() eq 0}">
+                        <p:outputLabel value="Trenutno nema igara koje cekaju verifikaciju..."/>
+                    </p:panel>
+                </p:panel>
+
+                <p:panel rendered="#{controlSupervizor.igra_prikazana eq true}" header="Verifikacija reci">
+                    <p:dataTable value="#{controlSupervizor.list_reci}" var="rec">
+                        <p:column headerText="Kategorija">
+                            <p:outputLabel value="#{rec.kategorija}"/>
+                        </p:column>
+                        <p:column headerText="Uneta rec">
+                            <p:outputLabel value="#{rec.rec}"/>
+                        </p:column>
+                        <p:column headerText="Odobri">
+                            <h:form>
+                                <p:commandButton update="@all" style="width: 100%" value="Odobri rec" action="#{controlSupervizor.odobriRec(rec)}"/>
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="Odbaci">
+                            <h:form>
+                                <p:commandButton update="@all" style="width: 100%" value="Odbaci rec" action="#{controlSupervizor.odbaciRec(rec)}"/>
+                            </h:form>
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+                <p:panel header="Povratak">
+                    <h:form>
+                        <h:commandButton action="supervizor"
+                                         style="padding: 5px"
+                                         class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                                         value="Povratak na panel"/>
+                    </h:form>
+                </p:panel>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.AnagramEntity" table="anagram" schema="igre">
+        <id name="idAnagrama">
+            <column name="id_anagrama" sql-type="int(11)"/>
+        </id>
+        <property name="pitanje1">
+            <column name="pitanje1" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="odgovor1">
+            <column name="odgovor1" sql-type="varchar(50)" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Promena lozinke</title>
+        <link rel="stylesheet" type="text/css" href="css/moj.css"/>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <h:form id="index">
+
+                    <p:panel header="Promena lozinke">
+                        <p:panelGrid columns="3">
+                            <p:outputLabel value="username:"/><p:inputText value="#{controlLogin.zamena_username}" required="true" requiredMessage="unesite username" id="id1"/><p:message for="id1"/>
+                            <p:outputLabel value="stara sifra:"/><p:password value="#{controlLogin.zamena_password}" required="true" requiredMessage="unesite username" id="id2"/><p:message for="id2"/>
+                            <p:outputLabel value="nova sifra:"/><p:password value="#{controlLogin.zamena_novi_password}" required="true" requiredMessage="unesite username" id="id3"/><p:message for="id3"/>
+                            <p:outputLabel value="potvrda nove sifre:"/><p:password value="#{controlLogin.potvrda}" required="true" requiredMessage="unesite username" id="id4"/><p:message for="id4"/>
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <p:commandButton value="promeni" action="#{controlLogin.zameni()}" update="@form"/>
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+                <h:form>
+
+                    <p:panel header="Povratak na listu korisnickih opcija">
+                        <p:commandButton value="povratak" action="#{controlLogin.povratak_pocetna()}"/>
+                    </p:panel>
+                </h:form>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

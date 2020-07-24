@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Rezultat igre</title>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <p:panel>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Datum:"/>
+                        <p:outputLabel value="#{controlUcesnik.rezultat.rezultat.partija.dan}"/>
+
+                        <p:outputLabel value="Igra 1: Anagram"/>
+                        <p:outputLabel value="#{controlUcesnik.rezultat.rezultat.poeni1}"/>
+
+                        <p:outputLabel value="Igra 2: Moj broj"/>
+                        <p:outputLabel value="#{controlUcesnik.rezultat.rezultat.poeni2}"/>
+
+                        <p:outputLabel value="Igra 3: 5 x 5"/>
+                        <p:outputLabel value="#{controlUcesnik.rezultat.rezultat.poeni3}"/>
+
+                        <p:outputLabel value="Igra 4: Zanimljiva geografija"/>
+                        <p:outputLabel value="#{controlUcesnik.rezultat.rezultat.poeni4}"/>
+
+                        <p:outputLabel value="Igra 5: Pehar"/>
+                        <p:outputLabel value="#{controlUcesnik.rezultat.rezultat.poeni5}"/>
+
+                        <p:outputLabel value="Ukupno poena:"/>
+                        <p:outputLabel value="#{controlUcesnik.rezultat.poeni}"/>
+                    </p:panelGrid>
+
+                    <h:form>
+                        <h:commandButton action="/ucesnik"
+                                         style="padding: 5px"
+                                         class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                         value="Povratak na moju stranu"/>
+                    </h:form>
+                </p:panel>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

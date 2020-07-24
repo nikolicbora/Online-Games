@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.KategorijaReciEntity" table="kategorija_reci" schema="igre">
+        <id name="idKategorijaReci">
+            <column name="id_kategorija_reci" sql-type="int(11)"/>
+        </id>
+        <property name="kategorija">
+            <column name="kategorija" sql-type="varchar(45)" length="45"/>
+        </property>
+        <set name="reci" table="recnik" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_kategorija_reci" not-null="true"/>
+            </key>
+            <one-to-many class="models.RecnikEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.FiveXFiveEntity" table="5puta5" schema="igre">
+        <id name="id5Puta5">
+            <column name="id_5puta5" sql-type="int(11)"/>
+        </id>
+        <property name="rec1">
+            <column name="rec1" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="rec2">
+            <column name="rec2" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="rec3">
+            <column name="rec3" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="rec4">
+            <column name="rec4" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="rec5">
+            <column name="rec5" sql-type="varchar(5)" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Zaboravljena lozinka</title>
+        <link rel="stylesheet" type="text/css" href="css/moj.css"/>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <h:form id="index">
+                    <p:panel header="Zaboravljena lozinka">
+                        <p:panelGrid columns="3">
+                            <p:outputLabel value="korisnicko ime:"/><p:inputText value="#{controlLogin.zaboravljen_username}" required="true" requiredMessage="unesite korisnicko ime" id="id1"/><p:message for="id1"/>
+                            <p:outputLabel value="jmbg:"/><p:inputText value="#{controlLogin.zaboravljen_jmbg}" required="true" requiredMessage="unesite jmbg" id="id2"/><p:message for="id2"/>
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <p:commandButton value="potvrdi" action="#{controlLogin.zaboravi()}" update="@all"/>
+                        </p:panelGrid>
+                    </p:panel>  
+                </h:form>
+                <h:form rendered="#{controlLogin.zaboravi_b1}" id="index1">
+                    <p:panel>
+                        <p:panelGrid columns="3">
+                            <p:outputLabel value="tajanstveno pitanje :"/><p:outputLabel value="#{controlLogin.zaboravljeno_pitanje}"/><p:outputLabel value=""/>
+                            <p:outputLabel value="tajanstven odgovor :"/><p:inputText value="#{controlLogin.njegov_odgovor}" required="true" requiredMessage="unesite tajanstveno pitanje" id="id3"/><p:message for="id3"/>
+                            <p:commandButton value="potvrdi" action="#{controlLogin.zaborav()}" update="@all"/><p:message for="error1"/><p:outputLabel id="error1"/>               
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+                <h:form>
+
+                    <p:panel header="Povratak na listu korisnickih opcija">
+                        <p:commandButton value="povratak" action="#{controlLogin.povratak_pocetna()}"/>
+                    </p:panel>
+                </h:form>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Igra dana | Anagram</title>
+
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <p:panel id="sve">
+                    <h:form id="next">
+                        <p:panel rendered="#{controlUcesnik.sledeca}" header="Vreme je isteklo!">
+                            <h:commandButton value="OK" 
+                                             style="padding: 5px"
+                                             class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                             action="#{controlUcesnik.daj_odgovor_anagram}"/>
+                        </p:panel>
+                        <p:panel id="timer" rendered="#{controlUcesnik.sledeca eq false}">
+                            <p:outputLabel value="Preostalo vreme: "/><p:outputLabel value="#{controlUcesnik.count}"/>
+                            <p:poll interval="1" listener="#{controlUcesnik.obrada_timer}" update="next"/>
+                        </p:panel>
+                    </h:form>
+
+                    <h:form>
+                        <p:poll interval="#{controlUcesnik.count + 2}" update="sve"/>
+                    </h:form>
+
+                    <h:form id="glavnaForma" rendered="#{controlUcesnik.sledeca eq false}">
+                        <p:panel header="Prva igra: Anagram">
+
+                            <p:panelGrid columns="2">
+                                <p:outputLabel value="Pitanje:"/><p:outputLabel value="#{controlUcesnik.anagram.pitanje1}"/>
+                                <p:outputLabel value="Odgovor:"/><p:outputLabel value="#{controlUcesnik.anagram.odgovor1}"/>
+                                <p:outputLabel value="Vas odgovor:"/><h:inputText id="odg" value="#{controlUcesnik.anagram.pokusaj}"/>
+                            </p:panelGrid>
+
+                            <h:commandButton value="Odgovori"
+                                             style="padding: 5px"
+                                             class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                             action="#{controlUcesnik.daj_odgovor_anagram}"/>
+                        </p:panel>
+                    </h:form>
+                </p:panel>
+
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

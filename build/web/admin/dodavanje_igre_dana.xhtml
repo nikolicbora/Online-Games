@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Dodavanje igre dana</title>
+        <link rel="stylesheet" type="text/css" href="css/moj.css"/>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <h:form id="dodavanje">
+                    <p:message for="error"/>
+                    <p:outputLabel id="error"/>
+                </h:form>
+                <p:panel header="Odaberi dan" rendered="#{controlAdmin.dodavanje_korak eq 1}">
+                    <h:form>
+                        <p:outputLabel value="Datum: "/>
+                        <p:calendar id="button" value="#{controlAdmin.dodavanje_datum}" showOn="button" mindate="#{controlAdmin.danas}"/>
+
+                        <p:commandButton value="Dalje"
+                                         style="margin: 10px;"
+                                         action="#{controlAdmin.dodavanjeDalje()}"
+                                         update="@all"/>
+                    </h:form>
+                </p:panel>
+                <p:panel header="Odaberi anagram" rendered="#{controlAdmin.dodavanje_korak eq 2}">
+                    <h:form>
+                        <p:selectOneListbox value="#{controlAdmin.dodavanje_anagram}" style="width: 100%" converter="anagramConverter">
+                            <f:selectItems value="#{controlAdmin.anagrami}" var="anagram" itemLabel="#{anagram.pitanje1} - #{anagram.odgovor1}" itemValue="#{anagram}" />
+                        </p:selectOneListbox>
+
+                        <p:commandButton value="Dalje"
+                                         style="margin: 10px;"
+                                         action="#{controlAdmin.dodavanjeDalje()}"
+                                         update="@all"/>
+                    </h:form>
+                </p:panel>
+                <p:panel header="Odaberi 5x5" rendered="#{controlAdmin.dodavanje_korak eq 3}">
+                    <h:form>
+                        <p:selectOneListbox value="#{controlAdmin.dodavanje_5x5}" style="width: 100%">
+                            <f:selectItems value="#{controlAdmin.fiveXfive}" var="five" itemLabel="#{five.rec1} - #{five.rec2} - #{five.rec3} - #{five.rec4} - #{five.rec5}" itemValue="#{five}" />
+                        </p:selectOneListbox>
+                        <p:commandButton value="Dalje"
+                                         style="margin: 10px;"
+                                         action="#{controlAdmin.dodavanjeDalje()}"
+                                         update="@all"/>
+                    </h:form>
+                </p:panel>
+                <p:panel header="Odaberi pehar" rendered="#{controlAdmin.dodavanje_korak eq 4}">
+                    <h:form>
+                        <p:selectOneListbox value="#{controlAdmin.dodavanje_pehar}" style="width: 100%">
+                            <f:selectItems value="#{controlAdmin.pehari}" var="pehar" itemLabel="#{pehar.p1} - (#{pehar.o1})" itemValue="#{pehar}" />
+                        </p:selectOneListbox>
+                        <p:commandButton value="Dalje"
+                                         style="margin: 10px;"
+                                         action="#{controlAdmin.dodavanjeDalje()}"
+                                         update="@all"/>
+                    </h:form>
+                </p:panel>
+
+                <h:form rendered="#{controlAdmin.dodavanje_korak eq 5}">
+                    <p:panel header="Uspesno ste dodali partiju za #{controlAdmin.dodavanje_datum}">
+                        <h:commandButton value="Zavrsi dodavanje" 
+                                         style="padding: 5px"
+                                         class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                                         action="admin"/>
+                    </p:panel>
+                </h:form>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

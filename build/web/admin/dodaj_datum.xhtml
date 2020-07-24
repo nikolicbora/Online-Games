@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Biranje datuma nove partije</title>
+        <link rel="stylesheet" type="text/css" href="css/moj.css"/>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <h:form id="form">
+                    <p:panel header="Odaberi dan">
+                        <p:message for="error"/>
+                        <p:outputLabel id="error"/>
+
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="Datum: "/>
+                            <p:calendar id="button" value="#{controlAdmin.dodavanje_datum}" showOn="button" mindate="#{controlAdmin.danas}"/>
+
+                            <p:commandButton value="Dalje"
+                                             style="margin: 10px;"
+                                             action="#{controlAdmin.partija_datum()}"
+                                             update="@all"/>
+                        </p:panelGrid>
+                    </p:panel>
+                    
+                </h:form>
+                <h:form>
+                    <p:panel header="Povratak">
+                        <p:commandButton value="Na moju stranu" action="admin" update="@all"/>
+                    </p:panel>
+                </h:form>
+            </div>
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+
