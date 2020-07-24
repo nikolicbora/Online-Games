@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Dodavanje igre pehar</title>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <p:panel header="Dodavanje igre pehar">
+                    <h:form id="forma">
+                        <p:message for="error"/>
+                        <p:outputLabel id="error"/>
+
+                        <p:panelGrid columns="6">
+                            <p:outputLabel value="Pitanje 1: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[0]}" id="id1" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 1: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[0]}" id="id2" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id1"/>
+                            <p:message for="id2"/>
+
+                            <p:outputLabel value="Pitanje 2: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[1]}" id="id3" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 2: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[1]}" id="id4" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id3"/>
+                            <p:message for="id4"/>
+
+                            <p:outputLabel value="Pitanje 3: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[2]}" id="id5" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 3: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[2]}" id="id6" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id5"/>
+                            <p:message for="id6"/>
+
+                            <p:outputLabel value="Pitanje 4: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[3]}" id="id7" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 4: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[3]}" id="id8" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id7"/>
+                            <p:message for="id8"/>
+
+                            <p:outputLabel value="Pitanje 5: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[4]}" id="id9" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 5: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[4]}" id="id10" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id9"/>
+                            <p:message for="id10"/>
+
+                            <p:outputLabel value="Pitanje 6: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[5]}" id="id11" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 6: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[5]}" id="id12" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id11"/>
+                            <p:message for="id12"/>
+
+                            <p:outputLabel value="Pitanje 7: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[6]}" id="id13" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 7: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[6]}" id="id14" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id13"/>
+                            <p:message for="id14"/>
+
+                            <p:outputLabel value="Pitanje 8: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[7]}" id="id15" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 8: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[7]}" id="id16" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id15"/>
+                            <p:message for="id16"/>
+
+                            <p:outputLabel value="Pitanje 9: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[8]}" id="id17" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 9: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[8]}" id="id18" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id17"/>
+                            <p:message for="id18"/>
+
+                            <p:outputLabel value="Pitanje 10: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[9]}" id="id19" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 10: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[9]}" id="id20" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id19"/>
+                            <p:message for="id20"/>
+
+                            <p:outputLabel value="Pitanje 11: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[10]}" id="id21" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 11: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[10]}" id="id22" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id21"/>
+                            <p:message for="id22"/>
+
+                            <p:outputLabel value="Pitanje 12: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[11]}" id="id23" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 12: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[11]}" id="id24" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id23"/>
+                            <p:message for="id24"/>
+
+                            <p:outputLabel value="Pitanje 13: "/>
+                            <p:inputText value="#{controlSupervizor.peharPitanja[12]}" id="id25" required="true" requiredMessage="unesite pitanje"/>
+                            <p:outputLabel value="Odgovor 13: "/>
+                            <p:inputText value="#{controlSupervizor.peharOdgovori[12]}" id="id26" required="true" requiredMessage="unesite odgovor"/>
+                            <p:message for="id25"/>
+                            <p:message for="id26"/>
+
+                            <p:commandButton value="Dodaj" update="forma" style="width: 100%;" action="#{controlSupervizor.dodajPehar()}"/>
+                        </p:panelGrid>
+                    </h:form>
+
+                    <h:form>
+                        <h:commandButton value="Povratak"
+                                         style="padding: 5px; margin-top: 20px"
+                                         class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                         action="supervizor"/>
+                    </h:form>
+                </p:panel>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

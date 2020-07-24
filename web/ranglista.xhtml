@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Ranglista</title>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <p:panel>
+                    <p:dataTable var="item" value="#{controlRanglist.ranglist}">
+                        <p:column headerText="Username">
+                            <h:outputText value="#{item.user.username}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 1: Anagram">
+                            <h:outputText value="#{item.poeni1}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 2: Moj broj">
+                            <h:outputText value="#{item.poeni2}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 3: 5 x 5">
+                            <h:outputText value="#{item.poeni3}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 4: Zanimljiva geografija">
+                            <h:outputText value="#{item.poeni4}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 5: Pehar">
+                            <h:outputText value="#{item.poeni5}" />
+                        </p:column>
+
+                        <p:column headerText="UKUPNO">
+                            <h:outputText value="#{item.poeni1 + item.poeni2 + item.poeni3 + item.poeni4 + item.poeni5}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+
+                <p:panel header="Vasa pozicija" rendered="#{controlRanglist.u_prvih10 eq false}">
+                    <p:dataTable var="item" value="#{controlRanglist.korisnik_rang}">
+                        <p:column headerText="Username">
+                            <h:outputText value="#{item.user.username}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 1: Anagram">
+                            <h:outputText value="#{item.poeni1}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 2: Moj broj">
+                            <h:outputText value="#{item.poeni2}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 3: 5 x 5">
+                            <h:outputText value="#{item.poeni3}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 4: Zanimljiva geografija">
+                            <h:outputText value="#{item.poeni4}" />
+                        </p:column>
+
+                        <p:column headerText="Igra 5: Pehar">
+                            <h:outputText value="#{item.poeni5}" />
+                        </p:column>
+
+                        <p:column headerText="UKUPNO">
+                            <h:outputText value="#{item.poeni1 + item.poeni2 + item.poeni3 + item.poeni4 + item.poeni5}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+
+                <h:form>
+                    <h:commandButton action="ucesnik"
+                                     style="padding: 5px"
+                                     class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                     value="Povratak na moju stranu"/>
+                </h:form>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

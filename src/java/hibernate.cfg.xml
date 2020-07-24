@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/igre?useSSL=false</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+<!--        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>-->
+
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+
+        <mapping resource="models/AnagramEntity.hbm.xml"/>
+        <mapping class="models.AnagramEntity"/>
+        <mapping class="models.PartijaEntity"/>
+        <mapping resource="models/PartijaEntity.hbm.xml"/>
+        <mapping resource="models/UserEntity.hbm.xml"/>
+        <mapping class="models.UserEntity"/>
+        <mapping resource="models/VezaEntity.hbm.xml"/>
+        <mapping class="models.VezaEntity"/>
+        <mapping resource="models/FiveXFiveEntity.hbm.xml"/>
+        <mapping class="models.FiveXFiveEntity"/>
+        <mapping resource="models/GeografijaEntity.hbm.xml"/>
+        <mapping class="models.GeografijaEntity"/>
+        <mapping resource="models/KategorijaReciEntity.hbm.xml"/>
+        <mapping class="models.KategorijaReciEntity"/>
+        <mapping resource="models/RecnikEntity.hbm.xml"/>
+        <mapping class="models.RecnikEntity"/>
+        <mapping resource="models/PeharEntity.hbm.xml"/>
+        <mapping class="models.PeharEntity"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.PartijaEntity" table="partija" schema="igre">
+        <id name="dan">
+            <column name="dan" sql-type="date"/>
+        </id>
+        <many-to-one name="anagram" class="models.AnagramEntity" fetch="select" 
+                     lazy="false" column="id_anagrama" foreign-key="id_anagrama">
+        </many-to-one>
+        <many-to-one name="fiveXfive" class="models.FiveXFiveEntity" fetch="select" 
+                     lazy="false" column="id_5puta5" foreign-key="id_5puta5">
+        </many-to-one>
+        <many-to-one name="geografija" class="models.GeografijaEntity" fetch="select" 
+                     lazy="false" column="id_geografija" foreign-key="id_geografija">
+        </many-to-one>
+        <many-to-one name="pehar" class="models.PeharEntity" fetch="select" 
+                     lazy="false" column="id_pehar" foreign-key="id_pehar">
+        </many-to-one>
+        <set name="igrali" table="veza" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="dan" not-null="true"/>
+            </key>
+            <one-to-many class="models.VezaEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

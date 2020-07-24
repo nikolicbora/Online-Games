@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Unos 5x5</title>
+        <link rel="stylesheet" type="text/css" href="css/moj.css"/>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <h:form>
+
+                    <p:panel rendered="#{controlAdmin.mod1}" header="Vas prosli izbor 5x5">
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="Rec 1: "/><p:outputLabel value="#{controlAdmin.nepoceta_partija.fiveXfive.rec1}"/>
+                            <p:outputLabel value="Rec 2: "/><p:outputLabel value="#{controlAdmin.nepoceta_partija.fiveXfive.rec2}"/>
+                            <p:outputLabel value="Rec 3: "/><p:outputLabel value="#{controlAdmin.nepoceta_partija.fiveXfive.rec3}"/>
+                            <p:outputLabel value="Rec 4: "/><p:outputLabel value="#{controlAdmin.nepoceta_partija.fiveXfive.rec4}"/>
+                            <p:outputLabel value="Rec 5: "/><p:outputLabel value="#{controlAdmin.nepoceta_partija.fiveXfive.rec5}"/>
+                        </p:panelGrid>
+                    </p:panel>
+
+                    <p:panel header="Odaberi 5x5">
+
+
+
+                        <p:dataTable value="#{controlAdmin.fiveXfive}" var="f">
+                            <p:column headerText="Rec 1">
+                                <p:outputLabel value="#{f.rec1}"/>
+                            </p:column>
+                            <p:column headerText="Rec 2">
+                                <p:outputLabel value="#{f.rec2}"/>
+                            </p:column>
+                            <p:column headerText="Rec 3">
+                                <p:outputLabel value="#{f.rec3}"/>
+                            </p:column>
+                            <p:column headerText="Rec 4">
+                                <p:outputLabel value="#{f.rec4}"/>
+                            </p:column>
+                            <p:column headerText="Rec 5">
+                                <p:outputLabel value="#{f.rec5}"/>
+                            </p:column>
+                            <p:column headerText="Izaberi">
+                                <p:commandButton value="Odaberi igru" style="width: 100%" action="#{controlAdmin.dodaj_pet_puta_pet(f)}" update="@all"/>
+                            </p:column>
+                        </p:dataTable>
+
+
+
+                    </p:panel>
+                </h:form>
+            </div>
+        
+
+        <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+    </div>
+    </h:body>
+</html>
+

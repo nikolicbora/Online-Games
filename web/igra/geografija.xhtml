@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Igra dana | Zanimljiva geografija</title>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <p:panel id="sve">
+                    <h:form id="next">
+                        <p:panel rendered="#{controlUcesnik.sledeca}" header="Vreme je isteklo!">
+                            <h:commandButton value="OK" 
+                                             style="padding: 5px"
+                                             class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                             action="#{controlUcesnik.geografija_zavrsi_igru}"/>
+                        </p:panel>
+                        <p:panel id="timer" rendered="#{controlUcesnik.sledeca eq false}">
+                            <p:outputLabel value="Preostalo vreme: "/><p:outputLabel value="#{controlUcesnik.count}"/>
+                            <p:poll interval="1" listener="#{controlUcesnik.obrada_timer}" update="next"/>
+                        </p:panel>
+                    </h:form>
+
+                    <h:form>
+                        <p:poll interval="#{controlUcesnik.count + 2}" update="sve"/>
+                    </h:form>
+
+                    <p:panel header="Cetvrta igra: Zanimljiva geografija" rendered="#{controlUcesnik.sledeca eq false}">
+                        <h:outputText value="Vase slovo: "/><h:outputText style="font-weight: bolder; font-size: 1.2em;" value="#{controlUcesnik.geografija.slovo}"/>
+
+                        <h:form id="drzava" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Drzava: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recDrzava}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('drzava')}" update="drzava"/>
+                        </h:form>
+                        <h:form id="grad" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Grad: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recGrad}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('grad')}" update="grad"/>
+                        </h:form>
+                        <h:form id="jezero" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Jezero: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recJezero}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('jezero')}" update="jezero"/>
+                        </h:form>
+                        <h:form id="planina" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Planina: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recPlanina}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('planina')}" update="planina"/>
+                        </h:form>
+                        <h:form id="reka" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Reka: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recReka}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('reka')}" update="reka"/>
+                        </h:form>
+                        <h:form id="zivotinja" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Zivotinja: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recZivotinja}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('zivotinja')}" update="zivotinja"/>
+                        </h:form>
+                        <h:form id="biljka" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Biljka: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recBiljka}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('biljka')}" update="biljka"/>
+                        </h:form>
+                        <h:form id="grupa" style="margin-top: 15px;">
+                            <p:message for="error"/>
+                            <p:outputLabel id="error"/>
+                            <h:outputText value="Muzicka grupa: "/>
+                            <h:inputText value="#{controlUcesnik.geografija.recGrupa}"/>
+                            <p:commandButton style="margin-left: 10px" value="Provera" actionListener="#{controlUcesnik.geografija_provera('grupa')}" update="grupa"/>
+                        </h:form>
+
+                        <h:form style="margin-top: 20px">
+                            <h:commandButton value="Zavrsi igru" 
+                                             style="padding: 5px"
+                                             class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                             action="#{controlUcesnik.geografija_zavrsi_igru}"/>
+                        </h:form>
+                    </p:panel>
+                </p:panel>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

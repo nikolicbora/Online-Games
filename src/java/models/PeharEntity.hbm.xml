@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.PeharEntity" table="pehar" schema="igre">
+        <id name="idPehar">
+            <column name="id_pehar" sql-type="int(11)"/>
+        </id>
+        <property name="p1">
+            <column name="p1" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o1">
+            <column name="o1" sql-type="varchar(9)" length="9" not-null="true"/>
+        </property>
+        <property name="p2">
+            <column name="p2" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o2">
+            <column name="o2" sql-type="varchar(8)" length="8" not-null="true"/>
+        </property>
+        <property name="p3">
+            <column name="p3" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o3">
+            <column name="o3" sql-type="varchar(7)" length="7" not-null="true"/>
+        </property>
+        <property name="p4">
+            <column name="p4" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o4">
+            <column name="o4" sql-type="varchar(6)" length="6" not-null="true"/>
+        </property>
+        <property name="p5">
+            <column name="p5" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o5">
+            <column name="o5" sql-type="varchar(5)" length="5" not-null="true"/>
+        </property>
+        <property name="p6">
+            <column name="p6" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o6">
+            <column name="o6" sql-type="varchar(4)" length="4" not-null="true"/>
+        </property>
+        <property name="p7">
+            <column name="p7" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o7">
+            <column name="o7" sql-type="varchar(3)" length="3" not-null="true"/>
+        </property>
+        <property name="p8">
+            <column name="p8" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o8">
+            <column name="o8" sql-type="varchar(4)" length="4" not-null="true"/>
+        </property>
+        <property name="p9">
+            <column name="p9" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o9">
+            <column name="o9" sql-type="varchar(5)" length="5" not-null="true"/>
+        </property>
+        <property name="p10">
+            <column name="p10" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o10">
+            <column name="o10" sql-type="varchar(6)" length="6" not-null="true"/>
+        </property>
+        <property name="p11">
+            <column name="p11" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o11">
+            <column name="o11" sql-type="varchar(7)" length="7" not-null="true"/>
+        </property>
+        <property name="p12">
+            <column name="p12" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o12">
+            <column name="o12" sql-type="varchar(8)" length="8" not-null="true"/>
+        </property>
+        <property name="p13">
+            <column name="p13" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="o13">
+            <column name="o13" sql-type="varchar(9)" length="9" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

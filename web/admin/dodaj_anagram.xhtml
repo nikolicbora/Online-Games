@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Unos anagrama</title>
+        <link rel="stylesheet" type="text/css" href="css/moj.css"/>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <h:form>
+                    <p:panel rendered="#{controlAdmin.mod1}" header="Vas prosli izbor anagrama">
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="Pitanje: "/><p:outputLabel value="#{controlAdmin.nepoceta_partija.anagram.pitanje1}"/>
+                            <p:outputLabel value="Odgovor: "/><p:outputLabel value="#{controlAdmin.nepoceta_partija.anagram.odgovor1}"/>
+                        </p:panelGrid>
+                    </p:panel>
+
+                    <p:panel header="Odaberi anagram">
+                        <p:dataTable value="#{controlAdmin.anagrami}" var="a">
+                            <p:column headerText="Pitanje">
+                                <p:outputLabel value="#{a.pitanje1}"/>
+                            </p:column>
+                            <p:column headerText="Odgovor">
+                                <p:outputLabel value="#{a.odgovor1}"/>
+                            </p:column>
+                            <p:column headerText="Izaberi">
+                                <p:commandButton value="Odaberi anagram" style="width: 100%" action="#{controlAdmin.dodaj_anagram(a)}" update="@all"/>
+                            </p:column>
+                        </p:dataTable>
+
+
+
+                    </p:panel>
+                </h:form>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+
+    </h:body>
+</html>
+

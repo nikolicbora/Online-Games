@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Supervizor</title>
+    </h:head>
+    <h:body>
+        <div id="wrapper" style=" width: 100%">
+            <div id="header" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+
+
+            <div id="central" style="width: 100%;height: 1500px;text-align: center;background-color: lemonchiffon">
+                <p:panel header="Supervizor panel" style="float: left; width: 99%; padding-bottom: 30px">
+                    <div style="width: 50%; float: left; text-align: center;">
+                        <h3>Verifikuj igre</h3>
+                        <h:form>
+                            <h:commandButton action="verifikovanje_igara"
+                                             style="padding: 5px"
+                                             class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                             value="Pregled"/>
+                        </h:form>
+                    </div>
+                    <div style="width: 50%; float: left; text-align: center;">
+                        <h3>Unos reci u recnik</h3>
+                        <h:form>
+                            <h:commandButton value="Unos reci" 
+                                             style="padding: 5px"
+                                             class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                             action="dodavanje_reci"/>
+                        </h:form>
+                    </div>
+                    <div style="width: 100%; margin-right:5%; float: left; text-align: center; margin-top: 50px">
+                        <h3>Unos pitanja</h3>
+                        <div style="width: 33%; float: left">
+                            <h:form>
+                                <h:commandButton action="dodavanje_anagram"
+                                                 style="padding: 5px; width: 40%"
+                                                 class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                                 value="Anagram"/>
+                            </h:form>
+                        </div>
+                        <div style="width: 33%; float: left">
+                            <h:form>
+                                <h:commandButton action="dodavanje_5x5"
+                                                 style="padding: 5px; width: 40%"
+                                                 class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                                 value="5 puta 5"/>
+                            </h:form>
+                        </div>
+                        <div style="width: 33%; float: left">
+                            <h:form>
+                                <h:commandButton action="dodavanje_pehar"
+                                                 style="padding: 5px; width: 40%"
+                                                 class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" 
+                                                 value="Pehar"/>
+                            </h:form>
+                        </div>
+                    </div>
+                </p:panel>
+                <p:panel header="Povratak na listu korisnickih opcija" style="float: left; width: 99%">
+                    <h:form>
+                        <p:commandButton value="Povratak" 
+                                         action="#{controlSupervizor.logout()}"/>
+                    </h:form>
+                </p:panel>
+            </div>
+
+            <div id="footer" style="width: 100%;height: 300px;text-align: center;background-color: black"></div>
+        </div>
+    </h:body>
+</html>
+

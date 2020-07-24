@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.VezaEntity" table="veza" schema="igre">
+        <id name="idVeza">
+            <column name="id_veza" sql-type="int(11)"/>
+        </id>
+        <property name="poeni1">
+            <column name="poeni1" sql-type="int(11)"/>
+        </property>
+        <property name="poeni2">
+            <column name="poeni2" sql-type="int(11)"/>
+        </property>
+        <property name="poeni3">
+            <column name="poeni3" sql-type="int(11)"/>
+        </property>
+        <property name="poeni4">
+            <column name="poeni4" sql-type="int(11)"/>
+        </property>
+        <property name="poeni5">
+            <column name="poeni5" sql-type="int(11)"/>
+        </property>
+        <property name="provera">
+            <column name="provera" sql-type="text" not-null="true"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="int(11)"/>
+        </property>
+        <many-to-one name="partija" class="models.PartijaEntity" fetch="select" column="dan"
+            lazy="false" foreign-key="dan">
+        </many-to-one>
+        <many-to-one name="user" class="models.UserEntity" fetch="select" column="username"
+            lazy="false" foreign-key="username">
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="models.GeografijaEntity" table="geografija" schema="igre">
+        <id name="idGeografija">
+            <column name="id_geografija" sql-type="int(11)"/>
+        </id>
+        <property name="slovo">
+            <column name="slovo" sql-type="varchar(1)" length="1"/>
+        </property>
+        <property name="recDrzava">
+            <column name="rec_drzava" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="recGrad">
+            <column name="rec_grad" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="recJezero">
+            <column name="rec_jezero" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="recPlanina">
+            <column name="rec_planina" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="recReka">
+            <column name="rec_reka" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="recZivotinja">
+            <column name="rec_zivotinja" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="recBiljka">
+            <column name="rec_biljka" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="recGrupa">
+            <column name="rec_grupa" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
